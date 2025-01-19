@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BASE_URL } from "./utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "./utils/userSclice";
 import UserCard from "./userCard";
 import axios from "axios";
@@ -37,6 +37,7 @@ const EditProfile = ({ user }) => {
         setShowToast(false);
       }, 3000);
     } catch (err) {
+        console.error("1",err);
       setError(err);
     }
   };

@@ -5,6 +5,7 @@ import { BASE_URL } from './utils/constants';
 import Profile from './Profile';
 import axios from 'axios';
 import { removeUser } from './utils/userSclice';
+import Connections from './Connections';
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -41,7 +42,10 @@ const NavBar = () => {
             <span className="badge">New</span>
           </Link>
         </li>
-        <li><a>Settings</a></li>
+        <li><Link to="/connections">Connections</Link></li>
+        <li>
+                <Link to="/requests">Requests</Link>
+              </li>
         <li><a onClick={handleLogOut}>Logout</a></li>
       </ul>
     </div>
